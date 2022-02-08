@@ -1,0 +1,49 @@
+
+Entity, Variable name, Database table & Column Name create Rules
+
+*** Everyone should be at first install those software**
+1. intellij IDE
+2. MySQL Database (Username should be :"root" no need to use password)
+3. Github Desktop
+
+After install this everyone should be create a schema name -- "tf_funding"
+
+***For Entity class create annotation**
+@Entity
+@Table(name = "donation")
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+
+***
+*** Any kinds of confution just message in Skype Group ***
+
+1. Table Name must be Specefic (Ex- "donation")
+2. Class Name Must Be Specific and Useable (Ex- DonationEntity)
+3. Column Name Must be Specific ( Ex- 
+	private long donationId;
+    	private String organizationId;)
+4. No Need to Create Constructor & Getter Setter automatic create Constructor & Getter Setter you jsut use (3 annotation
+	@AllArgsConstructor
+	@NoArgsConstructor
+	@Data)
+5. if dont work automatic create Constructor & Getter Setter just add plugins --lombok
+6. Entity Class must be add only entity package.
+7. Repository Interface and Class must add only repository package.
+8. Repository Interface & class name must be specfic (Ex Interface-DonationRepo)
+9. Everyone should check & run project. if everything work perfectly then commit & push the your work or code
+10. Git Basic command as below ---
+
+	git clone https://github.com/enamul95/talent-funding-development.git  (For project clone or Download)
+
+---new work add git command below three---
+
+	git add .
+	git commit -m "your specefic work describe shortly"
+	git push
+
+there are also varios kinds of command but we need this commands for this time. 
+if any confution no need to commit or push in github. 
+Message your problem in group and communicate anyother person who is capable to solved the problem.
+11. Only one person work on specefic package or module no need to change other project or package or module.
+12. Entity Class varriable name must be sequnce as per Database table sequnce

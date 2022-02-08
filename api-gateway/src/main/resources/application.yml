@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: api-gatway
+  cloud:
+    gateway:
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+      routes:
+        - id: authenticate-api
+          uri: lb://authenticate-service
+          predicates:
+            - Path=/authenticate-api/**
+        - id: user-api
+          uri: lb://user-service
+          predicates:
+            - Path=/user-api/**
+        - id: donation_api
+          uri: lb://donation-service
+          predicates:
+            - Path=/donation/**
+
+
+server:
+  port: 8765
+
+  #sleuth:
+    #sampler:
+      #probability: 1.0   # 1.0 means tracing every request . In live environment we can use 0.05 that means 5% of the request
+
+
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
